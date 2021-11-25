@@ -1,0 +1,10 @@
+.ImageWrapper {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .ImageWrapper {
+    display: inline;
+    width: 100%;
+  }
+}

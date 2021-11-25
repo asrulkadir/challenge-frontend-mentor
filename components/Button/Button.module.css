@@ -1,0 +1,28 @@
+.buttonCart {
+  background-color: var(--orange);
+  padding: 0.5rem;
+  margin-left: 1rem;
+  width: 60%;
+  border-radius: 5px;
+  color: var(--white);
+  font-weight: 700;
+  justify-content: center;
+  display: flex;
+  box-shadow: 0px 30px 25px var(--pale_orange);
+}
+
+.buttonCart:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.buttonCart > p {
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .buttonCart {
+    width: 90%;
+    margin: auto;
+  }
+}

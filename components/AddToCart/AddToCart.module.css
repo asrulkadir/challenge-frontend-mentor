@@ -1,0 +1,38 @@
+.addToCart {
+  width: 100%;
+  margin: 0 1rem;
+  display: flex;
+}
+
+.counter {
+  display: flex;
+  background-color: var(--grayish_blue);
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 40%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.minus {
+  margin-top: -0.5rem;
+  cursor: pointer;
+}
+
+.plus {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .addToCart {
+    flex-direction: column;
+    margin: 0 auto 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .counter {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+}

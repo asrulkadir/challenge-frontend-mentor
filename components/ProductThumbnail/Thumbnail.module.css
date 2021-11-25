@@ -1,0 +1,43 @@
+.product {
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* .swiper {
+  width: 27rem;
+} */
+
+.thumbnail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.divThumbnail {
+  margin: 1.5rem 0.5rem;
+  /* width: 6rem; */
+  border-radius: 5px;
+}
+
+/* .divThumbnail:active {
+  border: 2px solid var(--orange);
+  height: 6rem;
+} */
+
+.imgThumbnail {
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.imgThumbnail:hover {
+  opacity: 0.5;
+}
+
+.opacity {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 600px) {
+  .swiper {
+    display: none;
+  }
+}
