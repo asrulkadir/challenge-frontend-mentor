@@ -40,5 +40,5 @@ Users should be able to:
 
 ## Author
 
-- Website - (asrulkadir.github.io/my-personal-website)
+- Website - (https://asrulkadir.github.io/my-personal-website)
 - Frontend Mentor -(https://www.frontendmentor.io/profile/asrulkadir)
