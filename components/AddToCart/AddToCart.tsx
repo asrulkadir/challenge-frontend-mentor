@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Minus, Plus, CartIcon } from '../../assets/Icon';
 import Button from '../Button/Button';
 import styles from './AddToCart.module.css';
@@ -14,6 +14,11 @@ const AddToCart = ({ counter, setCounter, setTotalCart }: any) => {
     setCounter(counter + 1);
   };
 
+  const handleTotal = () => {
+    setTotalCart(counter);
+    localStorage.setItem('total', counter !== 0 ? counter : null);
+  };
+
   return (
     <div className={styles.addToCart}>
       <div className={styles.counter}>
@@ -24,7 +29,7 @@ const AddToCart = ({ counter, setCounter, setTotalCart }: any) => {
 
       <Button
         title="Add to cart"
-        onClick={() => setTotalCart(counter)}
+        onClick={handleTotal}
         icon={<CartIcon color="#fff" />}
       />
     </div>

@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css';
 import Thumbnail from '../components/ProductThumbnail/Thumbnail';
 import Header from '../components/Header/Header';
 import AddToCart from '../components/AddToCart/AddToCart';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal from '../components/Modal/Modal';
 import { SliderData } from '../assets/SliderData';
 import SliderPhone from '../components/SliderPhone/SliderPhone';
@@ -12,6 +12,13 @@ const Home = () => {
   const [counter, setCounter] = useState<Number>(0);
   const [totalCart, setTotalCart] = useState<Number>(0);
   const [showModal, setShowModal] = useState<Boolean>(false);
+
+  useEffect(() => {
+    const storage = localStorage.getItem('total');
+    const total = storage ? parseInt(storage) : 0;
+    setTotalCart(total);
+    setCounter(total);
+  }, []);
 
   return (
     <>
@@ -22,7 +29,11 @@ const Home = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Header totalCart={totalCart} setTotalCart={setTotalCart} />
+        <Header
+          totalCart={totalCart}
+          setTotalCart={setTotalCart}
+          setCounter={setCounter}
+        />
 
         <main className={styles.main}>
           <Thumbnail setShowModal={setShowModal} />

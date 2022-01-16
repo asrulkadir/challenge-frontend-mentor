@@ -7,12 +7,15 @@ import { Dispatch, SetStateAction } from 'react';
 interface Props {
   totalCart: any;
   setTotalCart: Dispatch<SetStateAction<Number>>;
+  setCounter: Dispatch<SetStateAction<Number>>;
 }
 
-const Cart = ({ totalCart, setTotalCart }: Props) => {
+const Cart = ({ totalCart, setTotalCart, setCounter }: Props) => {
   const handleDelete = () => {
     if (confirm('Delete Cart?')) {
       setTotalCart(0);
+      setCounter(0);
+      localStorage.setItem('total', '0');
     }
   };
 

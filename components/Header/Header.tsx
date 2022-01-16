@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Menu, Logo, Next, Previous, CartIcon, Close } from '../../assets/Icon';
 import { Profil } from '../../assets/Images';
@@ -9,9 +9,10 @@ import SideNavComp from '../SideNav/SideNav';
 interface Props {
   totalCart: Number;
   setTotalCart: Dispatch<SetStateAction<Number>>;
+  setCounter: Dispatch<SetStateAction<Number>>;
 }
 
-const Header = ({ totalCart, setTotalCart }: Props) => {
+const Header = ({ totalCart, setTotalCart, setCounter }: Props) => {
   const [cartInfo, setCartInfo] = useState<Boolean>(false);
   const [showSideNav, setShowSideNav] = useState<Boolean>(false);
 
@@ -45,9 +46,7 @@ const Header = ({ totalCart, setTotalCart }: Props) => {
               }
             />
 
-            {totalCart > 0 ? (
-              <div className={styles.count}>{totalCart}</div>
-            ) : null}
+            {totalCart ? <div className={styles.count}>{totalCart}</div> : null}
           </div>
           <div className={styles.profil}>
             <Image
@@ -62,7 +61,11 @@ const Header = ({ totalCart, setTotalCart }: Props) => {
       </header>
 
       {cartInfo ? (
-        <Cart totalCart={totalCart} setTotalCart={setTotalCart} />
+        <Cart
+          totalCart={totalCart}
+          setTotalCart={setTotalCart}
+          setCounter={setCounter}
+        />
       ) : null}
     </>
   );
